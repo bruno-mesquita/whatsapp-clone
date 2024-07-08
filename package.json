@@ -2,14 +2,24 @@
   "name": "whatsapp-clone-backend",
   "version": "1.0.50",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "test": "bun --env-file=.env.test test",
+    "dev": "bun --env-file=.env.development run --watch src/index.ts",
+    "start": "bun --env-file=.env run src/index.ts"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@elysiajs/cors": "^1.0.2",
+    "@elysiajs/jwt": "^1.0.2",
+    "@elysiajs/swagger": "^1.0.5",
+    "@lucia-auth/adapter-prisma": "^4.0.1",
+    "@prisma/client": "^5.15.0",
+    "cross-env": "^7.0.3",
+    "elysia": "latest",
+    "lucia": "^3.2.0"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "@biomejs/biome": "1.8.0",
+    "bun-types": "latest",
+    "prisma": "^5.15.0"
   },
   "module": "src/index.js"
 }
